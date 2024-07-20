@@ -88,7 +88,7 @@ function App() {
         />
         <ArrayDisplay array={array} />
         <SortButton onClick={handleSort} />
-        <div className="mt-4 max-h-60 overflow-y-auto w-full">
+        <div className="mt-4 max-h-fit overflow-y-auto w-full">
           {rootStep && <TreeNode step={rootStep} />}
         </div>
       </header>
