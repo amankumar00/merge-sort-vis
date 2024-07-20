@@ -13,7 +13,9 @@ const TreeNode = ({ step }) => {
               animate={{ scale: 1 }}
               initial={{ scale: 0 }}
               key={index}
-              className="bg-blue-500 text-white text-sm font-bold flex items-center justify-center m-1"
+              className={`text-white text-sm font-bold flex items-center justify-center m-1 ${
+                value >= 0 ? "bg-blue-500" : "bg-red-500"
+              }`}
               style={{ height: `${value * 15}px`, width: "30px" }}
             >
               {value}
@@ -22,14 +24,14 @@ const TreeNode = ({ step }) => {
         </div>
       </div>
       <div className="flex">
-        {step.left && (
-          <div className="flex-1 border-r-2 border-gray-300">
-            <TreeNode step={step.left} />
-          </div>
-        )}
         {step.right && (
           <div className="flex-1">
             <TreeNode step={step.right} />
+          </div>
+        )}
+        {step.left && (
+          <div className="flex-1 border-r-2 border-gray-300">
+            <TreeNode step={step.left} />
           </div>
         )}
       </div>

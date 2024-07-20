@@ -6,11 +6,13 @@ const ArrayDisplay = ({ array }) => (
     {array.map((value, index) => (
       <motion.div
         whileHover={{ scale: 1.1 }}
-        animate={{ scale: 1, rotate: [3, -3, 0] }}
+        animate={{ scale: 1 }}
         initial={{ scale: 0 }}
         // transition={{ type: "tween", duration: 3 }}
         key={index}
-        className="bg-blue-500 text-white text-sm font-bold flex items-center justify-center m-1"
+        className={` text-white text-sm font-bold flex items-center justify-center m-1 ${
+          value >= 0 ? "bg-blue-500" : "bg-red-500"
+        }`}
         style={{ height: `${value * 15}px`, width: "30px" }}
       >
         {value}
