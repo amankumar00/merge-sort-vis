@@ -6,7 +6,7 @@ const ArrayDisplay = ({ array }) => (
     {array.map((value, index) => (
       <motion.div
         whileHover={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
+        animate={{ scale: 1, rotate: [3, -3, 0] }}
         initial={{ scale: 0 }}
         // transition={{ type: "tween", duration: 3 }}
         key={index}

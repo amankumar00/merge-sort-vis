@@ -4,7 +4,7 @@ import TreeNode from "./components/TreeNode";
 import InputField from "./components/InputField";
 import ArrayDisplay from "./components/ArrayDisplay";
 import SortButton from "./components/SortButton";
-
+import { motion } from "framer-motion";
 function App() {
   const [array, setArray] = useState([]);
   const [rootStep, setRootStep] = useState(null);
@@ -77,22 +77,29 @@ function App() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100">
-      <header className="text-center py-5">
-        <h1 className="text-3xl font-bold mb-4">Merge Sort Visualizer</h1>
-        <InputField
-          input={input}
-          onChange={handleInputChange}
-          onSetArray={handleSetArray}
-          error={error}
-        />
-        <ArrayDisplay array={array} />
-        <SortButton onClick={handleSort} />
-        <div className="mt-4 max-h-fit overflow-y-auto w-full">
-          {rootStep && <TreeNode step={rootStep} />}
-        </div>
-      </header>
-    </div>
+    <motion.div
+      className="bg-teal-50"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 2 }}
+    >
+      <div className="flex flex-col items-center min-h-screen ">
+        <header className="text-center py-5">
+          <h1 className="text-3xl font-bold mb-4">Merge Sort Visualizer</h1>
+          <InputField
+            input={input}
+            onChange={handleInputChange}
+            onSetArray={handleSetArray}
+            error={error}
+          />
+          <ArrayDisplay array={array} />
+          <SortButton onClick={handleSort} />
+          <div className="mt-4 max-h-fit overflow-y-auto w-full">
+            {rootStep && <TreeNode step={rootStep} />}
+          </div>
+        </header>
+      </div>
+    </motion.div>
   );
 }
 

@@ -10,6 +10,8 @@ const InputField = ({ input, onChange, onSetArray, error }) => (
       className="border rounded px-2 py-1 mr-2"
     />
     <motion.button
+      // animate={{ rotate: [0, 1, -1, 0] }}
+      // transition={{ repeat: Infinity }}
       whileHover={{ scale: 1.1, color: `blue` }}
       onClick={onSetArray}
       className="bg-blue-500 text-white font-bold py-2 px-4 rounded"

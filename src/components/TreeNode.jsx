@@ -4,7 +4,7 @@ const TreeNode = ({ step }) => {
   if (!step) return null;
 
   return (
-    <div className="p-2 border rounded bg-gray-100 m-2 max-h-full max-w-fit">
+    <div className="p-2 border rounded bg-teal-50 m-2 max-h-full max-w-fit">
       <div className="  flex justify-center mb-2 ">
         <div className="flex">
           {step.array.map((value, index) => (
